@@ -18,7 +18,7 @@ class Product < ActiveRecord::Base
 
 		#ensure that there are no line items referencing this product
 		def ensure_not_referenced_by_any_line_item
-			if line.items.empty?
+			if line_items.empty?
 				return true
 			else
 				errors.add(:base, 'Line Items present')
